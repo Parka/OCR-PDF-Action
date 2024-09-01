@@ -21,7 +21,7 @@ fi
 
 ### Overwrite files
 
-if [ -z "$OUTPUTFILE"]
+if [ -z "$OUTPUTFILE" ]
 then
       echo "\Output file was not provided or could not be found, please provide a valid output file location - closing the script."
       exit 3 
