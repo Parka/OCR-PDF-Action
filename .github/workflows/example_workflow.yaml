@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Runing OCR PDF Action
     steps:
-    - uses: MarketingPipeline/OCR-PDF-Action@main
+    - uses: Parka/OCR-PDF-Action@main
       with:
         # Define the folder or file to download
         input_file: .github/example_pdfs/Non-text-searchable.pdf
