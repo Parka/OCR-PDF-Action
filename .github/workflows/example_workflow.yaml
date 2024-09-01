@@ -1,14 +1,21 @@
 name: OCR PDF Action
 # Define when to run job here
-on: [push, pull_request]
-
+on:
+  push: 
+    branches: "pdf"
 jobs:
   example_job:
     runs-on: ubuntu-latest
     name: Runing OCR PDF Action
     steps:
+    - uses: actions/checkout@v4
     - uses: Parka/OCR-PDF-Action@main
       with:
         # Define the folder or file to download
         input_file: .github/example_pdfs/Non-text-searchable.pdf
         output_file: .github/example_pdfs/output_searchable.pdf
+    - uses: actions4git/setup-git@v1
+    - run: git merge --squash main
+    - run: git add .github/example_pdfs/output_searchable.pdf
+    - run: git commit --message 'Update pdf'
+    - run: git push origin main
