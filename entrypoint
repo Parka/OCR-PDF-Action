@@ -30,4 +30,4 @@ else
 fi
 
 
-ocrmypdf $INPUTFILE $OUTPUTFILE --output-type pdf --skip-text
+ocrmypdf $INPUTFILE $OUTPUTFILE --force-ocr
