@@ -15,11 +15,12 @@ jobs:
       with:
         # Define the folder or file to download
         input_file: .github/example_pdfs/Non-text-searchable.pdf
-        output_file: .github/example_pdfs/output_searchable.pdf
+        output_file: .github/example_pdfs/temp.pdf
     - uses: actions4git/setup-git@v1
     - uses: actions/checkout@v4
       with: 
         ref: 'main'
+    - run: mv .github/example_pdfs/temp.pdf .github/example_pdfs/output_searchable.pdf
     - run: git add .github/example_pdfs/output_searchable.pdf
     - run: git commit --message 'Update pdf'
     - run: git push origin main
